@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Профориентация: 8 профессий в компьютерной графике | 7 класс</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background: linear-gradient(135deg, #10141f 0%, #1b2330 100%);
+            font-family: 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            padding: 40px 20px;
+            display: flex;
+            justify-content: center;
+        }
+        .poster {
+            max-width: 1300px;
+            width: 100%;
+            background: #fffef7;
+            border-radius: 64px;
+            box-shadow: 0 30px 50px rgba(0,0,0,0.4);
+            overflow: hidden;
+            transition: all 0.2s;
+        }
+        .header {
+            background: #f3b33d;
+            padding: 30px 25px 20px;
+            text-align: center;
+            color: #1e2a1e;
+        }
+        .header h1 {
+            font-size: 2.5rem;
+            letter-spacing: -0.5px;
+            margin-bottom: 10px;
+        }
+        .header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        .tagline {
+            background: #eef5e8;
+            text-align: center;
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #2c5a2c;
+            padding: 15px;
+            border-radius: 60px;
+            margin: 25px 30px 10px 30px;
+        }
+        .prof-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 25px;
+            padding: 20px 30px 30px;
+        }
+        .card {
+            background: white;
+            border-radius: 36px;
+            width: 280px;
+            box-shadow: 0 12px 22px rgba(0,0,0,0.1);
+            transition: transform 0.2s, box-shadow 0.2s;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+        .card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 28px rgba(0,0,0,0.15);
+        }
+        .card-emoji {
+            font-size: 3.8rem;
+            text-align: center;
+            background: #ffefd0;
+            padding: 25px 0 12px;
+        }
+        .card h3 {
+            background: #fcf3e4;
+            font-size: 1.6rem;
+            padding: 12px 15px;
+            text-align: center;
+            color: #3b2a1f;
+        }
+        .card-desc {
+            padding: 20px;
+            flex-grow: 1;
+            font-size: 0.95rem;
+            line-height: 1.45;
+            color: #2c3e2c;
+        }
+        .card-desc p {
+            margin-bottom: 12px;
+        }
+        .skills {
+            background: #f9f2e3;
+            border-radius: 28px;
+            padding: 10px;
+            margin: 12px 0;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+        .btn-demo {
+            background: #f3b33d;
+            border: none;
+            font-weight: bold;
+            padding: 8px 14px;
+            border-radius: 40px;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 12px;
+            transition: 0.1s;
+            font-size: 0.85rem;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+        }
+        .btn-demo:hover {
+            background: #e09d1e;
+        }
+        .footer-resources {
+            background: #e6f4ea;
+            border-radius: 40px;
+            margin: 15px 30px 30px;
+            padding: 25px;
+            text-align: center;
+        }
+        .qr-row {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 25px;
+            margin: 20px 0;
+        }
+        .qr-item {
+            text-align: center;
+            background: white;
+            padding: 10px 15px;
+            border-radius: 28px;
+            width: 130px;
+        }
+        .qr-item img {
+            width: 80px;
+            height: 80px;
+            margin-bottom: 8px;
+            background: white;
+            border-radius: 16px;
+        }
+        .footer-note {
+            font-size: 0.85rem;
+            color: #3a5a2a;
+            border-top: 1px solid #cbd5b5;
+            padding-top: 18px;
+            margin-top: 15px;
+        }
+        @media (max-width: 780px) {
+            .header h1 { font-size: 1.9rem; }
+            .prof-grid { gap: 18px; padding: 15px; }
+            .card { width: 100%; max-width: 320px; margin: 0 auto; }
+        }
+    </style>
+</head>
+<body>
+<div class="poster">
+    <div class="header">
+        <h1>🎯 Компьютерная графика: твоя первая ступень в IT-творчество</h1>
+        <p>От пикселей в Krita до профессий будущего — узнай, кем ты можешь стать!</p>
+    </div>
+    <div class="tagline">
+        ✨ 8 современных профессий, где нужны твои навыки (даже если ты только начал рисовать на компьютере) ✨
+    </div>
+
+    <div class="prof-grid">
+        <!-- 1. Графический дизайнер -->
+        <div class="card">
+            <div class="card-emoji">🎨</div>
+            <h3>Графический дизайнер</h3>
+            <div class="card-desc">
+                <p>Создаёт логотипы, обложки, посты для соцсетей, упаковку. Работает в Krita, Figma, Illustrator.</p>
+                <div class="skills">💡 Навыки: композиция, цвет, типографика.</div>
+                <button class="btn-demo" onclick="alert('Примеры обучения: Я.Практикум «Графический дизайн», Нетология, бесплатные уроки на YouTube')">🎓 Узнать о курсах</button>
+            </div>
+        </div>
+
+        <!-- 2. Ретушёр / обработчик фото -->
+        <div class="card">
+            <div class="card-emoji">🖼️</div>
+            <h3>Ретушёр</h3>
+            <div class="card-desc">
+                <p>Улучшает фотографии, убирает дефекты, делает снимки «как в журнале». Работает в Krita, Photoshop, Snapseed (телефон).</p>
+                <div class="skills">📸 Навыки: кадрирование, цветокоррекция, работа со слоями.</div>
+                <button class="btn-demo" onclick="alert('Курсы: Skillbox «Ретушёр», онлайн-школа Fotoshkola.net, YouTube-каналы по обработке на телефоне')">🎓 Узнать о курсах</button>
+            </div>
+        </div>
+
+        <!-- 3. 3D-моделлер (игры/кино) -->
+        <div class="card">
+            <div class="card-emoji">🎮</div>
+            <h3>3D-моделлер</h3>
+            <div class="card-desc">
+                <p>Создаёт персонажей, оружие, локации для игр и мультфильмов. Использует Blender, 3ds Max, текстуры в Krita.</p>
+                <div class="skills">🧩 Навыки: пространственное мышление, моделирование, текстурирование.</div>
+                <button class="btn-demo" onclick="alert('Курсы: XYZ School, Skillbox «3D-художник», Blender Guru на YouTube (бесплатно)')">🎓 Узнать о курсах</button>
+            </div>
+        </div>
+
+        <!-- 4. Промпт-инженер / AI-художник -->
+        <div class="card">
+            <div class="card-emoji">🤖</div>
+            <h3>Промпт-инженер</h3>
+            <div class="card-desc">
+                <p>Генерирует картинки через нейросети (Midjourney, DALL-E), а потом дорисовывает детали в Krita. Супер-профессия будущего.</p>
+                <div class="skills">✨ Навыки: фантазия, знание нейросетей, базовый рисунок.</div>
+                <button class="btn-demo" onclick="alert('Бесплатно: уроки по Midjourney на YouTube, курс «Нейросети для генерации изображений» на Stepik')">🎓 Узнать о курсах</button>
+            </div>
+        </div>
+
+        <!-- 5. Веб-дизайнер -->
+        <div class="card">
+            <div class="card-emoji">📱</div>
+            <h3>Веб-дизайнер</h3>
+            <div class="card-desc">
+                <p>Придумывает, как выглядят сайты и приложения: кнопки, меню, картинки. Работает в Figma, обрабатывает фото в Krita.</p>
+                <div class="skills">🌐 Навыки: чувство стиля, понимание интерфейсов, работа с макетами.</div>
+                <button class="btn-demo" onclick="alert('Курсы: «Веб-дизайн для начинающих» на Coursera, бесплатные уроки на YouTube (Фрилансер по жизни)')">🎓 Узнать о курсах</button>
+            </div>
+        </div>
+
+        <!-- 6. Специалист по мобильной фотообработке -->
+        <div class="card">
+            <div class="card-emoji">📸</div>
+            <h3>Мобильный ретушёр</h3>
+            <div class="card-desc">
+                <p>Обрабатывает фото прямо в телефоне для соцсетей, делает коллажи, убирает фон. Можно начинать зарабатывать уже в 14-15 лет.</p>
+                <div class="skills">📲 Навыки: Snapseed, Lightroom, PicsArt, чувство композиции.</div>
+                <button class="btn-demo" onclick="alert('Курсы: «Обработка на телефоне» в онлайн-школе Fotoshkola, бесплатные видео на YouTube (Snapseed уроки)')">🎓 Узнать о курсах</button>
+            </div>
+        </div>
+
+        <!-- 7. Motion-дизайнер -->
+        <div class="card">
+            <div class="card-emoji">🎬</div>
+            <h3>Motion-дизайнер</h3>
+            <div class="card-desc">
+                <p>Оживляет графику: делает анимированные логотипы, заставки для YouTube, рекламные ролики. Базовую анимацию можно изучить уже в Krita.</p>
+                <div class="skills">🎞️ Навыки: анимация, работа с ключевыми кадрами, After Effects.</div>
+                <button class="btn-demo" onclick="alert('Курсы: Skillbox «Motion дизайн», бесплатные уроки анимации в Krita на YouTube')">🎓 Узнать о курсах</button>
+            </div>
+        </div>
+
+        <!-- 8. Иллюстратор (книги/комиксы) -->
+        <div class="card">
+            <div class="card-emoji">🧑‍🎨</div>
+            <h3>Иллюстратор</h3>
+            <div class="card-desc">
+                <p>Рисует картинки для книг, комиксов, настольных игр, манги. Можно работать удалённо с любым издательством.</p>
+                <div class="skills">✍️ Навыки: стиль, персонажи, сюжетные композиции, владение Krita.</div>
+                <button class="btn-demo" onclick="alert('Курсы: «Иллюстрация в Krita» на Stepik, Bang Bang Education, бесплатные уроки на YouTube (Veronika Orlova)')">🎓 Узнать о курсах</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer-resources">
+        <h3>🚀 Хочешь попробовать уже сегодня?</h3>
+        <p>Бесплатные уроки по Krita, обработке фото и дизайну — сканируй QR-коды!</p>
+        <div class="qr-row">
+            <div class="qr-item">
+                <img src="https://api.qrserver.com/v1/create-qr-code/?size=90x90&data=https://www.youtube.com/results?search_query=krita+%D1%83%D1%80%D0%BE%D0%BA%D0%B8+%D0%B4%D0%BB%D1%8F+%D0%BD%D0%B0%D1%87%D0%B8%D0%BD%D0%B0%D1%8E%D1%89%D0%B8%D1%85" alt="Уроки Krita">
+                <p>Уроки Krita</p>
+            </div>
+            <div class="qr-item">
+                <img src="https://api.qrserver.com/v1/create-qr-code/?size=90x90&data=https://snapseed.online/lessons/" alt="Обработка фото">
+                <p>Snapseed / фото</p>
+            </div>
+            <div class="qr-item">
+                <img src="https://api.qrserver.com/v1/create-qr-code/?size=90x90&data=https://www.figma.com/resources/learn-design/" alt="Figma для дизайна">
+                <p>Figma дизайн</p>
+            </div>
+            <div class="qr-item">
+                <img src="https://api.qrserver.com/v1/create-qr-code/?size=90x90&data=https://www.blender.org/support/tutorials/" alt="Blender 3D">
+                <p>Blender 3D</p>
+            </div>
+        </div>
+        <p style="margin-top: 12px;">⭐ Наведи телефон на QR-код — откроется бесплатный урок. Начни свой путь в IT-профессию прямо сейчас!</p>
+        <div class="footer-note">
+            🌐 Материал подготовлен в рамках урока «Создание графических изображений в Krita».<br>
+            Расскажи родителям и друзьям — мир компьютерной графики ждёт тебя!
+        </div>
+    </div>
+</div>
+</body>
+</html>

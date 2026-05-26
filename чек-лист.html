@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Чек-лист самодиагностики | Krita</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            background: linear-gradient(145deg, #1e293b 0%, #0f172a 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+        .checklist-container {
+            max-width: 800px;
+            width: 100%;
+            background: #fffef7;
+            border-radius: 56px;
+            box-shadow: 0 25px 45px rgba(0, 0, 0, 0.3);
+            padding: 2rem;
+            transition: all 0.2s;
+        }
+        h1 {
+            font-size: 1.8rem;
+            margin: 0 0 0.25rem 0;
+            color: #2c3e2f;
+            border-bottom: 3px solid #f3b33d;
+            padding-bottom: 12px;
+            text-align: center;
+        }
+        .sub {
+            text-align: center;
+            color: #6b5a3e;
+            margin-bottom: 1.5rem;
+        }
+        .checklist {
+            background: #fff5e8;
+            border-radius: 40px;
+            padding: 1.5rem;
+            margin: 1rem 0;
+        }
+        .check-item {
+            background: white;
+            border-radius: 60px;
+            padding: 12px 20px;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+            transition: 0.1s;
+        }
+        .check-item label {
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: #2d3e2d;
+            flex: 1;
+            cursor: pointer;
+        }
+        input[type="checkbox"] {
+            width: 24px;
+            height: 24px;
+            cursor: pointer;
+            accent-color: #2e7d32;
+        }
+        .result-area {
+            background: #e6f4ea;
+            border-radius: 40px;
+            padding: 1.2rem;
+            margin-top: 1.5rem;
+            text-align: center;
+            border-left: 8px solid #2e7d32;
+        }
+        button {
+            background: #f3b33d;
+            border: none;
+            font-size: 1.2rem;
+            font-weight: bold;
+            padding: 12px 28px;
+            border-radius: 60px;
+            cursor: pointer;
+            transition: transform 0.1s, background 0.2s;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+            color: #2d2b1f;
+            width: 100%;
+            margin-top: 10px;
+        }
+        button:active {
+            transform: scale(0.97);
+        }
+        .score {
+            font-size: 2rem;
+            font-weight: 800;
+            margin: 10px 0;
+            color: #1e5a1e;
+        }
+        .feedback {
+            font-size: 1.1rem;
+            padding: 10px;
+        }
+        .hidden {
+            display: none;
+        }
+        @media (max-width: 650px) {
+            .checklist-container { padding: 1rem; }
+            .check-item label { font-size: 0.9rem; }
+            button { font-size: 1rem; }
+        }
+    </style>
+</head>
+<body>
+<div class="checklist-container">
+    <h1>📋 Чек-лист самодиагностики</h1>
+    <div class="sub">Отметьте, что вам удалось на уроке</div>
+
+    <div class="checklist" id="checklist">
+        <div class="check-item">
+            <input type="checkbox" id="ch1">
+            <label for="ch1">🔍 Я нашёл(ла) в Krita панель инструментов и докер «Слои».</label>
+        </div>
+        <div class="check-item">
+            <input type="checkbox" id="ch2">
+            <label for="ch2">➕ Я создал(а) новый слой.</label>
+        </div>
+        <div class="check-item">
+            <input type="checkbox" id="ch3">
+            <label for="ch3">🎨 Я сделал(а) заливку фона (или градиент).</label>
+        </div>
+        <div class="check-item">
+            <input type="checkbox" id="ch4">
+            <label for="ch4">⭐ Я нарисовал(а) фигуру (круг, звезду, сердечко).</label>
+        </div>
+        <div class="check-item">
+            <input type="checkbox" id="ch5">
+            <label for="ch5">📝 Я добавил(а) текст на открытку.</label>
+        </div>
+        <div class="check-item">
+            <input type="checkbox" id="ch6">
+            <label for="ch6">💾 Я сохранил(а) изображение в форматах .kra и .png.</label>
+        </div>
+        <div class="check-item">
+            <input type="checkbox" id="ch7">
+            <label for="ch7">🗣️ Я могу объяснить соседу, зачем нужны слои.</label>
+        </div>
+    </div>
+
+    <button id="checkBtn">✅ Проверить результаты</button>
+
+    <div id="resultArea" class="result-area hidden">
+        <div class="score" id="scoreText"></div>
+        <div class="feedback" id="feedbackText"></div>
+    </div>
+</div>
+
+<script>
+    const checkboxes = ['ch1', 'ch2', 'ch3', 'ch4', 'ch5', 'ch6', 'ch7'];
+    const checkBtn = document.getElementById('checkBtn');
+    const resultArea = document.getElementById('resultArea');
+    const scoreText = document.getElementById('scoreText');
+    const feedbackText = document.getElementById('feedbackText');
+
+    checkBtn.addEventListener('click', () => {
+        let count = 0;
+        checkboxes.forEach(id => {
+            if (document.getElementById(id).checked) count++;
+        });
+        
+        scoreText.innerText = `${count} из 7`;
+        
+        if (count === 7) {
+            feedbackText.innerHTML = " Отлично! Вы полностью освоили материал урока. Так держать!";
+        } else if (count >= 5) {
+            feedbackText.innerHTML = " Хорошо! Вы усвоили главное. Осталось немного подтянуть — посмотрите видеоурок по Krita дома.";
+        } else if (count >= 3) {
+            feedbackText.innerHTML = " Неплохо, но есть пробелы. Рекомендуем повторить тему «Слои и инструменты» и обратиться к учителю за помощью.";
+        } else {
+            feedbackText.innerHTML = " Стоит уделить теме больше внимания. Попросите учителя объяснить ещё раз, как работать со слоями и сохранять файлы.";
+        }
+        
+        resultArea.classList.remove('hidden');
+    });
+</script>
+</body>
+</html>
